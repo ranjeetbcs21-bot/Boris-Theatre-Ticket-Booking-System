@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><title>Admin Customer Management | Boris Theatre</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <h1>BORIS THEATRE | Admin Customer Management</h1>
+  <nav><a href="/">Home</a><a href="/register">+ Add Customer</a><a href="/admin/export">Export CSV</a></nav>
+</header>
+<div class="container">
+  <div class="alert-msg">{{message}}</div>
+  <div class="alert-error">{{error}}</div>
+
+  <div class="kpi-row">
+    <div class="kpi"><h3>Total Customers</h3><p>{{totalCustomers}}</p></div>
+    <div class="kpi"><h3>Loyalty Members</h3><p>{{loyaltyCount}}</p></div>
+    <div class="kpi"><h3>New Registrations Today</h3><p>{{todayCount}}</p></div>
+  </div>
+
+  <div class="card">
+    <form class="toolbar" method="GET" action="/admin/customers">
+      <input type="text" name="search" value="{{search}}" placeholder="Search name or email...">
+      <select name="loyalty">
+        <option value="all" {{selectedAll}}>All Customers</option>
+        <option value="true" {{selectedTrue}}>Loyalty Members Only</option>
+        <option value="false" {{selectedFalse}}>Standard Members Only</option>
+      </select>
+      <button class="btn" type="submit">Search / Filter</button>
+      <a class="btn secondary" href="/admin/customers">Reset</a>
+    </form>
+
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Full Name</th><th>Email Address</th><th>Phone</th><th>Date Joined</th><th>Loyalty</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>{{customerRows}}</tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>

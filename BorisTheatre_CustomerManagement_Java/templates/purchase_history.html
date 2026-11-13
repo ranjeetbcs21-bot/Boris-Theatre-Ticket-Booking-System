@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><title>Purchase History | Boris Theatre</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <h1>BORIS THEATRE | Customer Purchase History</h1>
+  <nav><a href="/admin/customers">Back to Customer List</a></nav>
+</header>
+<div class="container">
+  <div class="card">
+    <h2>Purchase History for {{fullName}} (ID: #{{customerID}})</h2>
+    <p>Email: {{emailAddress}}</p>
+    <table>
+      <thead><tr><th>Order ID</th><th>Order Date</th><th>Total Amount</th><th>Order Status</th></tr></thead>
+      <tbody>{{orderRows}}</tbody>
+    </table>
+    <a class="btn" href="/admin/customers">Back to List</a>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><title>Customer Login | Boris Theatre</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <h1>BORIS THEATRE | Customer Login</h1>
+  <nav><a href="/">Home</a><a href="/register">Register</a><a href="/admin/customers">Admin Portal</a></nav>
+</header>
+<div class="container">
+  <div class="card" style="max-width: 480px; margin: auto;">
+    <h2>Customer Sign In</h2>
+    <p>Try sample account: <strong>alice@example.com</strong></p>
+    <div class="alert-error">{{error}}</div>
+    <form method="POST" action="/login">
+      <label>Registered Email Address *</label>
+      <input type="email" name="emailAddress" required>
+      <button class="btn" type="submit">View My Account</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>

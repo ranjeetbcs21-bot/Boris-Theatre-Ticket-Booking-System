@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><title>Register Account | Boris Theatre</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <h1>BORIS THEATRE | Customer Registration</h1>
+  <nav><a href="/">Home</a><a href="/login">Login</a><a href="/admin/customers">Admin Portal</a></nav>
+</header>
+<div class="container">
+  <div class="card" style="max-width: 520px; margin: auto;">
+    <h2>Create Customer Account</h2>
+    <div class="alert-error">{{error}}</div>
+    <form method="POST" action="/register">
+      <label>Full Name *</label>
+      <input type="text" name="fullName" value="{{fullName}}" required>
+      <label>Email Address *</label>
+      <input type="email" name="emailAddress" value="{{emailAddress}}" required>
+      <label>Phone Number (Optional)</label>
+      <input type="text" name="phoneNumber" value="{{phoneNumber}}" placeholder="+44 7700 900077">
+      <button class="btn" type="submit">Register Account</button>
+    </form>
+  </div>
+</div>
+</body>
+</html>
